@@ -28,16 +28,48 @@ import 'package:flutter/material.dart';
 
 
 // --------------------------------------------------------------------------------------------------------------
+// container
+// code to put the text at the centre of the container
+// void main() {
+//   runApp(MaterialApp(
+//     home: Scaffold(
+//       body: SafeArea(
+//         child:Center(
+//           child: Container(color: Colors.green,
+//           width:200,
+//           height:150,
+//             child: Align(
+//               alignment: Alignment.center,
+//               child: Text(
+//                 "Flutter",
+//                 style: TextStyle(fontSize: 25,color: Colors.white),)),
+//           ),
+//         ) 
+//       )
+//   ),
+//   ));
+// }
+
+// code to put the image at the centre of the container
+
 
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Image(
-            image: AssetImage('images/BMW.png')),
-        ),
-      ),
-  )
+        child:Center(
+          child: Container(color: Colors.green,
+          width:200,
+          height:150,
+            child: Align(
+              alignment: Alignment.center,
+              child: Image(image: AssetImage('images/BMW.png'),
+              width: 80,height: 60,)),
+          ),
+        ) 
+      )
+  ),
   ));
 }
+
+// container only have 1 child
