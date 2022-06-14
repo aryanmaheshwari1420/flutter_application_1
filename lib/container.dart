@@ -53,23 +53,23 @@ import 'package:flutter/material.dart';
 // code to put the image at the centre of the container
 
 
-void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: SafeArea(
-        child:Center(
-          child: Container(color: Colors.green,
-          width:200,
-          height:150,
-            child: Align(
-              alignment: Alignment.center,
-              child: Image(image: AssetImage('images/BMW.png'),
-              width: 80,height: 60,)),
-          ),
-        ) 
-      )
-  ),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     home: Scaffold(
+//       body: SafeArea(
+//         child:Center(
+//           child: Container(color: Colors.green,
+//           width:200,
+//           height:150,
+//             child: Align(
+//               alignment: Alignment.center,
+//               child: Image(image: AssetImage('images/BMW.png'),
+//               width: 80,height: 60,)),
+//           ),
+//         ) 
+//       )
+//   ),
+//   ));
+// }
 
 // container only have 1 child
