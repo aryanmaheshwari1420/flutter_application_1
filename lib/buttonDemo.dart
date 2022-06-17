@@ -14,7 +14,25 @@ class buttonDemo extends StatelessWidget {
           // ignore: prefer_const_constructors
           title: Text("ButtonDemo"),
         ),
-        body: Center(child: Container(child: Text("This is scaffold body"))),
+        body: Center(
+            child: Container(
+                child: Column(
+          children: [
+            ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 24),
+                )),
+            TextButton(
+                onPressed: () {},
+                child: Text("TextButton", style: TextStyle(fontSize: 24))),
+            OutlinedButton(
+                onPressed: () {},
+                child: Text("OutLine Button", style: TextStyle(fontSize: 24))),
+            IconButton(onPressed: (){}, icon: Icon(Icons.wifi_sharp))    
+          ],
+        ))),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print("Floating action button clicked");
@@ -28,4 +46,4 @@ class buttonDemo extends StatelessWidget {
 
 
 
-// floatin action button is not a part of body it is in hawa(floating)
+// floating action button is not a part of body it is in hawa(floating)
