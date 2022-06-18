@@ -21,6 +21,7 @@ class _MenusDemoState extends State<MenusDemo> {
         appBar: AppBar(
           title: Text("Menu Demo"),
           actions: [
+            IconButton(onPressed: (){}, icon: Icon(Icons.help)),
             PopupMenuButton(onSelected: (String? newItem) {
               print("NEW ITEM");
             }, itemBuilder: (BuildContext context) {
