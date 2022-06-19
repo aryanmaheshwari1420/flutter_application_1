@@ -6,20 +6,21 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Screen1.dart';
 
 class Screen0 extends StatelessWidget {
-  const Screen0({Key? key}) : super(key: key);
+  String title = '';
+  Screen0({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(backgroundColor: Colors.greenAccent, title: Text("Screen 0 ")),
+          AppBar(backgroundColor: Colors.greenAccent, title: Text(title)),
       body: Center(
         child: Container(
           child: ElevatedButton(
-            child: Text("got to screen-1"),
+            child: Text("goto screen 1"),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Screen1();
+                return Screen1(title: 'Gallery');
               }));
             },
           ),

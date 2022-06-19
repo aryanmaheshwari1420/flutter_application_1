@@ -6,12 +6,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/Screen/Screen0.dart';
 
 class Screen2 extends StatelessWidget {
-  const Screen2({Key? key}) : super(key: key);
+  String title = '';
+  Screen2({Key? key,required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.lime, title: Text("Screen 2 ")),
+      appBar: AppBar(backgroundColor: Colors.lime, title: Text(title)),
       body: Center(
         child: Container(
           child: ElevatedButton(

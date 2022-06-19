@@ -7,13 +7,14 @@ import 'package:flutter_application_1/Screen/Screen0.dart';
 import 'package:flutter_application_1/Screen/Screen2.dart';
 
 class Screen1 extends StatelessWidget {
-  const Screen1({Key? key}) : super(key: key);
+  String title = "";
+  Screen1({Key? key,required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.indigoAccent, title: Text("Screen 1 ")),
+          backgroundColor: Colors.indigoAccent, title: Text(title)),
       body: Center(
         child: Container(
           child: ElevatedButton(
@@ -23,9 +24,9 @@ class Screen1 extends StatelessWidget {
             ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return Screen2();
+                return Screen2(title: 'About Phone',);
               }));
-      
+
               // Navigator.pop(context);
             },
           ),
