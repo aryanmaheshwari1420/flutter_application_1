@@ -26,7 +26,6 @@ class Screen1 extends StatelessWidget {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return Screen2(title: 'About Phone',);
               }));
-
               // Navigator.pop(context);
             },
           ),
