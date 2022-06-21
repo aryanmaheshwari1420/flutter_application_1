@@ -33,6 +33,7 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo> {
           BottomNavigationBarItem(
               icon: Icon(Icons.audiotrack_rounded), label: "Music"),
         ],
+        type: BottomNavigationBarType.fixed,// this fixed the bottom items
         backgroundColor: Colors.blue,
         fixedColor: Colors.white,
         currentIndex: _selectedItem,
