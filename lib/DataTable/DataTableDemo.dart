@@ -21,8 +21,8 @@ class DataTableDemo extends StatelessWidget {
          DataTable(
                 columns: [
                   DataColumn(label: Text("Roll no ")),
-                  DataColumn(label: Text("Roll no ")),
-                  DataColumn(label: Text("Roll no "))
+                  DataColumn(label: Text("Roll no")),
+                  DataColumn(label: Text("Roll no"))
                   ],
                 rows: [
                   DataRow(cells: [
