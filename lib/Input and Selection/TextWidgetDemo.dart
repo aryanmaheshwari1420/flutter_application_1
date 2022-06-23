@@ -9,6 +9,7 @@ class TextWidgetDemo extends StatefulWidget {
 
 class _TextWidgetDemoState extends State<TextWidgetDemo> {
   var _secureText = true;
+  String? _nameError = null;
   TextEditingController _nameController = TextEditingController();
 
   @override
@@ -23,6 +24,7 @@ class _TextWidgetDemoState extends State<TextWidgetDemo> {
               maxLength: 20, // maximum character it can hold
               controller: _nameController,
               decoration: InputDecoration(
+                errorText: _nameError,
                 labelText: "Name",
                 labelStyle: TextStyle(fontSize: 15, color: Colors.red),
                 hintText: "Enter your Name",
@@ -87,6 +89,12 @@ class _TextWidgetDemoState extends State<TextWidgetDemo> {
             ),
             ElevatedButton(
                 onPressed: () {
+                  setState(() {
+                    if (_nameController.text.length < 3)
+                      _nameError = "Enter at least 3 character";
+                    else
+                      _nameError = null;
+                  });
                   print("Name:" + _nameController.text);
                 },
                 child: Text("Submit"))
