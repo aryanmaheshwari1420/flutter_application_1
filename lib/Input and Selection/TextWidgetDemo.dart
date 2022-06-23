@@ -8,6 +8,9 @@ class TextWidgetDemo extends StatefulWidget {
 }
 
 class _TextWidgetDemoState extends State<TextWidgetDemo> {
+  var _secureText = true;
+  TextEditingController _nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,6 +21,7 @@ class _TextWidgetDemoState extends State<TextWidgetDemo> {
           children: [
             TextField(
               maxLength: 20, // maximum character it can hold
+              controller: _nameController,
               decoration: InputDecoration(
                 labelText: "Name",
                 labelStyle: TextStyle(fontSize: 15, color: Colors.red),
@@ -50,28 +54,42 @@ class _TextWidgetDemoState extends State<TextWidgetDemo> {
                 labelText: "Description",
                 labelStyle: TextStyle(fontSize: 15, color: Colors.red),
                 hintText: "Enter your Address",
-                border:
-                    InputBorder.none,
-                    fillColor: Colors.black12,
-                    filled: true,
+                border: InputBorder.none,
+                fillColor: Colors.black12,
+                filled: true,
               ),
             ),
             SizedBox(
               height: 20,
             ),
             TextField(
-                decoration: InputDecoration(
-                  labelText: "password",
-                  labelStyle: TextStyle(fontSize: 15, color: Colors.blue),
-                  hintText: "Enter your pass",
-                  border: UnderlineInputBorder(),
-                  suffixIcon: Icon(Icons.remove_red_eye,color: Colors.lightBlue,),
+              decoration: InputDecoration(
+                labelText: "password",
+                labelStyle: TextStyle(fontSize: 15, color: Colors.blue),
+                hintText: "Enter your pass",
+                border: UnderlineInputBorder(),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      _secureText = !_secureText;
+                    });
+                  },
+                  icon: Icon(
+                    _secureText ? Icons.remove_red_eye : Icons.hide_source,
+                    color: Color.fromARGB(255, 71, 173, 220),
+                  ),
                 ),
-                obscureText: true, // for data not to be visible
-                ),
-                SizedBox(
+              ),
+              obscureText: _secureText, // for data not to be visible
+            ),
+            SizedBox(
               height: 20,
             ),
+            ElevatedButton(
+                onPressed: () {
+                  print("Name:" + _nameController.text);
+                },
+                child: Text("Submit"))
           ],
         ),
       )),
