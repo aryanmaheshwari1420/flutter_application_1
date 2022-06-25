@@ -21,7 +21,7 @@ class _pizzaAppState extends State<pizzaApp> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
-          children: [
+          children: [ 
             Text(
               "Select your Topping",
               style: TextStyle(fontSize: 24),
@@ -90,7 +90,7 @@ class _pizzaAppState extends State<pizzaApp> {
                           _isPaid = !status;
                         });
                       }),
-                  Text(_isPaid ? "Yes" : "No", style: TextStyle(fontSize: 24))
+                  Text(_isPaid ? " Yes " : " No ", style: TextStyle(fontSize: 24))
                 ],
               ),
             ),
