@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 import 'package:grouped_buttons/grouped_buttons.dart';
 
@@ -87,7 +88,7 @@ class _pizzaAppState extends State<pizzaApp> {
                       value: _isPaid,
                       onChanged: (bool status) {
                         setState(() {
-                          _isPaid = !status;
+                          _isPaid = status;
                         });
                       }),
                   Text(_isPaid ? " Yes " : " No ", style: TextStyle(fontSize: 24))
