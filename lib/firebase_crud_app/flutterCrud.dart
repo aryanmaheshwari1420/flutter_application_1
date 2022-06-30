@@ -41,7 +41,7 @@ class _flutterCrudState extends State<flutterCrud> {
     }
   }
 
-  void delete()async {
+  void delete() async {
     try {
       // print("Delete Button Pressed");
       await firebase.collection("User").doc(name.text).delete();
@@ -117,6 +117,40 @@ class _flutterCrudState extends State<flutterCrud> {
                     )),
               ],
             ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20),
+              // height: 300,
+              // width: double.infinity,
+              child: StreamBuilder<QuerySnapshot>(
+                stream: firebase.collection("User").snapshots(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ListView.builder(
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, i) {
+                          QueryDocumentSnapshot x = snapshot.data!.docs[i];
+                          return Column(
+                            children: [
+                              ListTile(
+                                leading: Icon(
+                                  Icons.person,
+                                  size: 40,
+                                ),
+                                title: Text(x['name']),
+                                subtitle: Text(x['email']),
+                              ),
+                              Divider(
+                                height: 5,
+                              )
+                            ],
+                          );
+                        });
+                  } else {
+                    return Center(child: CircularProgressIndicator());
+                  }
+                },
+              ),
+            )
           ],
         ),
       ),
