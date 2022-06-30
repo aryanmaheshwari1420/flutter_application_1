@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 class flutterCrud extends StatefulWidget {
   const flutterCrud({Key? key}) : super(key: key);
@@ -11,10 +13,16 @@ class _flutterCrudState extends State<flutterCrud> {
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
 
-  void create() {
+  // create an instance of Firebase
+
+  final firebase = FirebaseFirestore.instance;
+
+  void create() async{
     try {
-      print(name.text);
-      print(email.text);
+      await firebase.collection("User").doc().set({
+        "name": name.text,
+        "email": email.text,
+      });
     } catch (e) {
       print(e);
     }
