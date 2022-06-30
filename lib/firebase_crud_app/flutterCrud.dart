@@ -17,28 +17,34 @@ class _flutterCrudState extends State<flutterCrud> {
 
   final firebase = FirebaseFirestore.instance;
 
-  void create() async{
+  void create() async {
     try {
-      await firebase.collection("User").doc().set({
+      await firebase.collection("User").doc(name.text).set({
         "name": name.text,
         "email": email.text,
       });
+      // unique id comes under doc()
     } catch (e) {
       print(e);
     }
   }
 
-  void update() {
+  void update() async {
     try {
-      print("Update Button Pressed");
+      // print("Update Button Pressed");
+      await firebase
+          .collection("User")
+          .doc(name.text)
+          .update({"email": email.text});
     } catch (e) {
       print(e);
     }
   }
 
-  void delete() {
+  void delete()async {
     try {
-      print("Delete Button Pressed");
+      // print("Delete Button Pressed");
+      await firebase.collection("User").doc(name.text).delete();
     } catch (e) {
       print(e);
     }
