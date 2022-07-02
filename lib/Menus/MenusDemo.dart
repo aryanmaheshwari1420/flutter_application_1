@@ -49,7 +49,7 @@ class _MenusDemoState extends State<MenusDemo> {
                       style: TextStyle(
                           fontSize: 15,
                           color: (firstCity == dropDownItems)
-                              ? Colors.blueGrey
+                              ? Colors.black
                               : Colors.red),
                     ),
                     value: dropDownItems,
